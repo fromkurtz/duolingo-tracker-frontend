@@ -43,30 +43,45 @@ img.favicon {
 
 .buttons {
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Altera para coluna para posicionar o botão abaixo */
+    align-items: center; /* Centraliza os botões */
     gap: 10px;
 }
 
+/* Estilo do botão de download */
 #downloadBtn {
-    margin-top: 1rem; /* Adiciona espaço acima do botão */
+    margin-top: 1.5rem; /* Adiciona mais espaço acima do botão */
     width: 100%; /* Ocupa a largura total do container */
-}
-button, a#downloadButton {
-    padding: 10px 15px 5px 15px;
+    padding: 10px 15px;
     font-size: 16px;
     border-radius: 5px;
-    display: inline-block;
-    text-align: center;
-    min-width: 160px; /* Garante que os botões tenham o mesmo tamanho */
-}
-
-a#downloadButton {
-    background-color: #28a745;
+    background-color: #28a745; /* Verde */
     color: white;
     text-decoration: none;
+    text-align: center;
     line-height: 40px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-a#downloadButton:hover {
-    background-color: #218838;
+/* Efeito de hover no botão de download */
+#downloadBtn:hover {
+    background-color: #218838; /* Verde mais escuro */
+    transform: translateY(-2px); /* Levanta o botão levemente */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+}
+
+/* Estilo para outros botões */
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #6658d3; /* Roxo */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #5549b2; /* Roxo mais escuro */
 }
