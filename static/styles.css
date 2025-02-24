@@ -47,6 +47,10 @@ img.favicon {
     gap: 10px;
 }
 
+#downloadBtn {
+    margin-top: 1rem; /* Adiciona espaço acima do botão */
+    width: 100%; /* Ocupa a largura total do container */
+}
 button, a#downloadButton {
     padding: 10px 15px 5px 15px;
     font-size: 16px;
