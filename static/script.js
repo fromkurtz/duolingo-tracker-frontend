@@ -4,8 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const loading = document.getElementById("loading");
     const listaDiv = document.getElementById("listaResultados");
     const resultadosDiv = document.getElementById("resultados");
+    const aplicarConfigBtn = document.getElementById("aplicarConfig");
 
-    function enviarDados() {
+    // Função para enviar dados ao back-end
+    async function enviarDados() {
         const users = document.getElementById("users").value.split("\n").map(u => u.trim()).filter(u => u);
         const meta_xp = document.getElementById("meta_xp").value;
 
@@ -59,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Função para exibir os resultados em uma tabela
     function mostrarListaXP(dados) {
         listaDiv.innerHTML = ""; // Limpa o conteúdo anterior
 
@@ -84,6 +87,6 @@ document.addEventListener("DOMContentLoaded", function () {
         listaDiv.innerHTML = table;
     }
 
-    // Adiciona o evento ao botão apenas quando o DOM estiver carregado
-    document.querySelector("button").addEventListener("click", enviarDados);
+    // Adiciona o evento ao botão "Aplicar Configuração"
+    aplicarConfigBtn.addEventListener("click", enviarDados);
 });
