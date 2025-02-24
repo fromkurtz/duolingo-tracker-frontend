@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const API_URL = "https://duolingo-tracker-backend.onrender.com"; // URL do backend no Render
     const downloadBtn = document.getElementById("downloadBtn");
     const loading = document.getElementById("loading");
     const listaDiv = document.getElementById("listaResultados");
@@ -18,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         loading.classList.remove("hidden");
         resultadosDiv.classList.add("hidden"); // Esconde a div de resultados antes de carregar
 
-        fetch("/processar", {
+        fetch(`${API_URL}/processar`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ users: users, meta_xp: meta_xp })
@@ -29,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
             loading.classList.add("hidden");
 
             if (data.file_url) {
-                downloadBtn.href = data.file_url;
+                downloadBtn.href = `${API_URL}${data.file_url}`; // Ajusta para a URL completa do Render
                 downloadBtn.classList.remove("hidden"); // Exibe o botão de download
             }
 
