@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duolingo XP Tracker</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="static/styles.css" type="image/png" class="favicon">
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 flex items-center justify-center min-h-screen">
 
@@ -22,30 +23,29 @@
             <input type="number" id="meta_xp" class="w-full p-3 border rounded-lg focus:ring focus:ring-blue-400 dark:bg-gray-700 dark:text-white" placeholder="Ex: 1000">
         </div>
 
-        <!-- Botão "Aplicar Configuração" -->
-        <button id="aplicarConfig" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 mt-6 rounded-lg shadow-md transition-all">
-            🚀 Aplicar Configuração
-        </button>
+        <div class="buttons">
+            <button onclick="enviarDados()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 mt-6 rounded-lg shadow-md transition-all">
+                🚀 Aplicar Configuração
+            </button>
 
-        <!-- Botão de Download (inicialmente oculto) -->
-        <a id="downloadBtn" href="#" class="hidden w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 mt-4 rounded-lg text-center shadow-md transition-all">
-            ⬇ Baixar Planilha
-        </a>
+            <a id="downloadBtn" href="#" class="hidden w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 mt-4 rounded-lg text-center shadow-md transition-all">
+                ⬇ Baixar Planilha
+            </a>
+        </div>
 
-        <!-- Loading -->
         <div id="loading" class="hidden flex items-center justify-center mt-4">
             <span class="loader"></span>
             <p class="text-gray-500 dark:text-gray-400 text-sm ml-2">Gerando planilha...</p>
         </div>
 
-        <!-- Resultados -->
+        <!-- Nova div para exibir os usuários e XP -->
         <div id="resultados" class="hidden mt-6 p-4 bg-gray-200 dark:bg-gray-700 rounded-lg shadow-md">
             <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100">📊 Resultados:</h3>
             <ul id="listaResultados" class="mt-2 text-gray-700 dark:text-gray-300"></ul>
         </div>
     </div>
 
-    <!-- Referência ao arquivo JavaScript externo -->
     <script src="static/script.js"></script>
+    
 </body>
 </html>
