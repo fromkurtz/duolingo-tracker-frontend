@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7ff;
+    text-align: center;
+    margin: 0;
+}
+
+img.favicon {
+    width: 100px;
+    height: 100px;
+}
+
+.navbar {
+    background: white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #444;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.navbar a.active {
+    background-color: #6658d3;
+    color: white;
+}
+
+.container {
+    background: white;
+    width: 50%;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+button, a#downloadButton {
+    padding: 10px 15px 5px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    min-width: 160px; /* Garante que os botões tenham o mesmo tamanho */
+}
+
+a#downloadButton {
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    line-height: 40px;
+}
+
+a#downloadButton:hover {
+    background-color: #218838;
+}
