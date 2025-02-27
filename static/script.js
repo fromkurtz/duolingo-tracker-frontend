@@ -73,3 +73,4 @@ document.addEventListener("DOMContentLoaded", function () {
     // Adiciona o evento ao botão apenas quando o DOM estiver carregado
     document.querySelector("button").addEventListener("click", enviarDados);
 });
+
