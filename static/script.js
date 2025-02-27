@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const listaDiv = document.getElementById("listaResultados");
     const resultadosDiv = document.getElementById("resultados");
 
+    const API_URL = "https://duolingo-tracker-backend.onrender.com"; // URL do backend
+
     function enviarDados() {
         const users = document.getElementById("users").value.split("\n").map(u => u.trim()).filter(u => u);
         const meta_xp = document.getElementById("meta_xp").value;
@@ -18,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         loading.classList.remove("hidden");
         resultadosDiv.classList.add("hidden"); // Esconde a div de resultados antes de carregar
 
-        fetch("/processar", {
+        fetch(`${API_URL}/processar`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ users: users, meta_xp: meta_xp })
@@ -29,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
             loading.classList.add("hidden");
 
             if (data.file_url) {
-                downloadBtn.href = data.file_url;
+                downloadBtn.href = `${API_URL}${data.file_url}`;
                 downloadBtn.classList.remove("hidden"); // Exibe o botão de download
             }
 
@@ -73,4 +75,3 @@ document.addEventListener("DOMContentLoaded", function () {
     // Adiciona o evento ao botão apenas quando o DOM estiver carregado
     document.querySelector("button").addEventListener("click", enviarDados);
 });
-
