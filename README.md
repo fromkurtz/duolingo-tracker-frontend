@@ -6,7 +6,7 @@
 🚀 A web interface to track Duolingo users' progress, visualize total XP, and download reports.  
 
 ## 🖥️ Demo  
-🔗 Live site: [Duolingo Tracker](https://bryankurtzdev.github.io/duolingo-tracker-frontend/)  
+🔗 Live site: [Duolingo Tracker](https://fromkurtz.github.io/duolingo-tracker-frontend/)  
 
 ## 📂 Project Structure  
 - `index.html` → Main page.  
